@@ -4,24 +4,52 @@ body {
     margin: 0;
     padding: 0;
     color: #3b2f2f; /* Dark coffee color */
-    background-color: #f5f0e1; /* Light beige color */
+    background-image: url('../resources/background.jpg'); /* Set the background image */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the image */
+    display: flex;
+    flex-direction: column; /* Flexbox for layout */
+    height: 100vh; /* Full height */
+    opacity: 0.9; /* Optional: makes the background slightly transparent */
 }
 
 /* Header Section */
 header {
     text-align: center;
     padding: 20px;
-    background-color: #d9c7a1; /* Light brown */
-    color: #3b2f2f; /* Dark coffee */
+    flex: 1; /* Allow header to grow */
+    position: relative; /* Needed for absolute positioning of bubble */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for readability */
+    border-radius: 10px; /* Rounded corners for header */
 }
 
+/* Welcome Text Style */
 header h1 {
-    margin: 0;
-    font-size: 2em;
+    color: rgba(25, 25, 81, 0.585); /* Bright blue color for the welcome text */
+    font-size: 3em; /* Make the text larger */
+    font-family: 'Arial', sans-serif; /* Use a clean, professional font */
+    font-weight: bold; /* Make the font bold */
+    text-transform: uppercase; /* Make the text uppercase for a stylish effect */
+    letter-spacing: 2px; /* Add spacing between letters */
 }
 
-header p {
-    font-style: italic;
+/* Bubble Background for Profile Picture */
+.bubble {
+    display: inline-block; /* Aligns bubble with text */
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    background-color: #d9c7a1; /* Light brown color for the bubble */
+    border-radius: 50%; /* Creates the bubble shape */
+    padding: 10px; /* Adds space inside the bubble */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    margin: 20px 0; /* Space above and below the bubble */
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 100%; /* Makes the image fill the bubble */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 50%; /* Rounds the corners of the picture */
 }
 
 /* Navigation Bar */
@@ -29,8 +57,9 @@ nav {
     display: flex;
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
     justify-content: center;
-    background-color: #a47551; /* Coffee color */
+    background-color: rgba(167, 117, 81, 0.8); /* Coffee color with transparency */
     padding: 10px;
+    border-radius: 5px; /* Rounded corners */
 }
 
 nav a {
@@ -47,22 +76,13 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Section Styles */
+/* Home Section */
 section {
     margin: 20px;
     padding: 15px;
-    background-color: #f5f0e1; /* Beige */
+    background-color: rgba(245, 240, 225, 0.8); /* Beige with transparency */
     border: 1px solid #d9c7a1; /* Light brown border */
     border-radius: 8px;
-}
-
-section h2 {
-    color: #3b2f2f; /* Dark coffee */
-}
-
-/* Home Section */
-#home {
-    text-align: center;
 }
 
 /* Responsive Styles */
@@ -76,21 +96,31 @@ section h2 {
     }
 
     header h1 {
-        font-size: 1.5em; /* Smaller header size on smaller screens */
+        font-size: 2em; /* Smaller header size on smaller screens */
     }
 
     section {
         margin: 10px; /* Reduced margin on smaller screens */
         padding: 10px; /* Reduced padding on smaller screens */
     }
+
+    .bubble {
+        width: 150px; /* Adjust for smaller screens */
+        height: 150px;
+    }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.2em; /* Further reduce header size */
+        font-size: 1.5em; /* Further reduce header size */
     }
 
     nav a {
         padding: 6px 10px; /* Smaller padding for links */
+    }
+
+    .bubble {
+        width: 100px; /* Further adjust for very small screens */
+        height: 100px;
     }
 }
