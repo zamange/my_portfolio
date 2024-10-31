@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #3b2f2f; /* Dark coffee color */
+    background-color: #f5f0e1; /* Light beige color */
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #d9c7a1; /* Light brown */
+    color: #3b2f2f; /* Dark coffee */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center;
+    background-color: #a47551; /* Coffee color */
+    padding: 10px;
+}
+
+nav a {
+    color: #f5f0e1; /* Beige */
+    text-decoration: none;
+    margin: 5px 15px; /* Reduced margin for smaller screens */
+    font-weight: bold;
+    padding: 8px 15px;
+}
+
+nav a:hover {
+    background-color: #d9c7a1; /* Light brown */
+    color: #3b2f2f; /* Dark coffee */
+    border-radius: 5px;
+}
+
+/* Section Styles */
+section {
+    margin: 20px;
+    padding: 15px;
+    background-color: #f5f0e1; /* Beige */
+    border: 1px solid #d9c7a1; /* Light brown border */
+    border-radius: 8px;
+}
+
+section h2 {
+    color: #3b2f2f; /* Dark coffee */
+}
+
+/* Skills Section */
+#skills {
+    text-align: center;
+}
+
+#skills ul {
+    list-style-type: none; /* Removes default bullet points */
+    padding: 0; /* Removes default padding */
+}
+
+#skills li {
+    margin: 10px 0; /* Adds space between list items */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack navigation links vertically */
+    }
+
+    nav a {
+        margin: 5px 0; /* Adjust margin for vertical layout */
+    }
+
+    header h1 {
+        font-size: 1.5em; /* Smaller header size on smaller screens */
+    }
+
+    section {
+        margin: 10px; /* Reduced margin on smaller screens */
+        padding: 10px; /* Reduced padding on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em; /* Further reduce header size */
+    }
+
+    nav a {
+        padding: 6px 10px; /* Smaller padding for links */
+    }
+}
