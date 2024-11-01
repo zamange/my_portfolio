@@ -1,17 +1,35 @@
 /* General Styles */
+/* Fade-in and float animation */
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End in the original position */
+    }
+}
+
+/* Apply animation to the body */
 body {
-    font-family: 'Roboto', sans-serif; /* Modern font */
+    /* Existing styles */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #3b2f2f; /* Dark coffee color */
-    background-image: url('../resources/backgroundpic.jpeg'); /* Updated background image */
-    background-size: cover; /* Cover the entire page */
-    background-position: center; /* Center the image */
+    color: #3b2f2f;
+    background-image: url('../resources/backgroundpic.jpeg');
+    background-size: cover;
+    background-position: center;
     display: flex;
-    flex-direction: column; /* Flexbox for layout */
-    height: 100vh; /* Full height */
-    opacity: 0.9; /* Slightly transparent */
+    flex-direction: column;
+    height: 100vh;
+    opacity: 0.9;
+
+    /* New animation styles */
+    animation: floatIn 1s ease-out; /* 1s duration, ease-out for smooth finish */
 }
+
 
 /* Navigation Bar */
 nav {
@@ -110,6 +128,8 @@ section {
     border: 2px solid #d9c7a1; /* Light brown border */
     border-radius: 10px; /* More rounded corners */
 }
+
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
