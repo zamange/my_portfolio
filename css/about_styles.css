@@ -1,23 +1,38 @@
 /* General Styles */
+/* Reusing the fade-in animation from home_styles.css */
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End in the original position */
+    }
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Match font family */
     margin: 0;
     padding: 0;
     color: #3b2f2f; /* Dark coffee color */
     background-color: #f5f0e1; /* Light beige color */
+    background-image: url('../resources/paper-1914901_640.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire body */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    opacity: 0; /* Start invisible */
+    animation: floatIn 1s forwards; /* Apply floatIn animation */
 }
 
 /* Header Section */
 header {
     text-align: center;
-    padding: 20px;
-    background-color: #d9c7a1; /* Light brown */
-    color: #3b2f2f; /* Dark coffee */
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
+    padding: 30px; /* Match the padding from home_styles.css */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for readability */
+    border-radius: 15px; /* Match the border radius */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Match the box shadow */
+    color: rgba(25, 25, 81, 0.85); /* Darker blue for better contrast */
 }
 
 /* Navigation Bar */
@@ -25,16 +40,22 @@ nav {
     display: flex;
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
     justify-content: center;
-    background-color: #a47551; /* Coffee color */
-    padding: 10px;
+    background-color: rgba(167, 117, 81, 0.9); /* Coffee color with transparency */
+    padding: 15px; /* More padding for aesthetics */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    position: sticky; /* Stick to the top */
+    top: 0; /* Position at the top */
+    z-index: 1000; /* Ensure it stays above other content */
 }
 
 nav a {
     color: #f5f0e1; /* Beige */
     text-decoration: none;
-    margin: 5px 15px; /* Reduced margin for smaller screens */
-    font-weight: bold;
-    padding: 8px 15px;
+    margin: 5px 20px; /* Adjusted margin for better spacing */
+    font-weight: 600; /* Semi-bold */
+    padding: 10px 15px; /* More padding for better click area */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
 }
 
 nav a:hover {
@@ -43,50 +64,111 @@ nav a:hover {
     border-radius: 5px;
 }
 
+
 /* Section Styles */
 section {
-    margin: 20px;
-    padding: 15px;
-    background-color: #f5f0e1; /* Beige */
-    border: 1px solid #d9c7a1; /* Light brown border */
-    border-radius: 8px;
-}
-
-section h2 {
-    color: #3b2f2f; /* Dark coffee */
+    margin: 30px; /* More margin for spacious layout */
+    padding: 20px; /* Match padding */
+    background-color: rgba(245, 240, 225, 0.9); /* Beige with transparency */
+    border: 2px solid #d9c7a1; /* Light brown border */
+    border-radius: 10px; /* Match the corner radius */
 }
 
 /* About Section */
 #about {
-    text-align: center;
+    text-align: center; /* Center content inside the section */
+}
+
+/* Intro Box Styles */
+.intro-box {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(245, 240, 225, 0.9); /* Light beige with transparency */
+    border: 2px solid #d9c7a1; /* Light brown border */
+    border-radius: 10px; /* Match the corner radius */
+    color: #3b2f2f; /* Dark coffee */
+    max-width: 800px;
+    text-align: left;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 1.4em; /* Match smaller text size */
+    line-height: 1.6; /* Match line height */
+}
+
+/* Container for testing boxes */
+.testing-container {
+    display: flex; /* Use flexbox to align children side by side */
+    justify-content: center; /* Center align boxes */
+    gap: 20px; /* Space out boxes with a gap */
+    margin: 20px; /* Margin around the container */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Testing Box Styles */
+.testing-box {
+    background-color: rgba(245, 240, 225, 0.9); /* Beige background with transparency */
+    border: 2px solid #d9c7a1; /* Light brown border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Increased padding inside the box for spacing */
+    margin: 0; /* No additional margin around the box */
+    text-align: left; /* Align text to the left */
+    width: 280px; /* Adjust width for better layout */
+    height: 250px; /* Set a fixed height for square shape */
+    display: flex; /* Use flexbox for inner content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space out content vertically */
+    transition: transform 0.3s; /* Smooth transition for the hover effect */
+}
+
+/* Hover Effect */
+.testing-box:hover {
+    transform: translateY(-5px); /* Float effect on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .testing-box {
+        flex: 1 1 45%; /* Two boxes per row on medium screens */
+    }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stack navigation links vertically */
+        flex-direction: column;
     }
 
     nav a {
-        margin: 5px 0; /* Adjust margin for vertical layout */
+        margin: 5px 0;
     }
 
     header h1 {
-        font-size: 1.5em; /* Smaller header size on smaller screens */
+        font-size: 1.5em;
     }
 
     section {
-        margin: 10px; /* Reduced margin on smaller screens */
-        padding: 10px; /* Reduced padding on smaller screens */
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .intro-box {
+        padding: 15px;
+        font-size: 0.9em; /* Slightly smaller font on medium screens */
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.2em; /* Further reduce header size */
+        font-size: 1.2em;
     }
 
     nav a {
-        padding: 6px 10px; /* Smaller padding for links */
+        padding: 6px 10px;
+    }
+
+    .intro-box {
+        padding: 10px;
+        font-size: 0.85em; /* Smaller font on small screens */
     }
 }
