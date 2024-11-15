@@ -16,7 +16,7 @@ body {
     margin: 0;
     padding: 0;
     color: #3b2f2f; /* Dark coffee color */
-    background-color: #f5f0e1; /* Light beige color */
+    background: linear-gradient(to bottom, #f5f0e1, #ffffff); /* Gradient from beige to white */
     background-image: url('../resources/paper-1914901_640.jpg'); /* Background image */
     background-size: cover; /* Cover the entire body */
     background-position: center; /* Center the background image */
@@ -24,6 +24,7 @@ body {
     opacity: 0; /* Start invisible */
     animation: floatIn 1s forwards; /* Apply floatIn animation */
 }
+
 
 /* Header Section */
 header {
